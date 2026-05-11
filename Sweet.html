@@ -32,13 +32,9 @@
 </head>
 
 <body class="text-center bg-pink-200 min-h-screen">
-
-  <!-- TITLE -->
   <h3 class="text-orange-800 text-5xl font-bold mt-10">
     Sweet Recipes!
   </h3>
-
-  <!-- NAVIGATION -->
   <div class="flex justify-center gap-6 mt-10 flex-wrap">
 
     <a href="index.html">
@@ -107,33 +103,26 @@
 
   </div>
 
-  <!-- POPUP MODAL -->
   <div id="modal"
        class="hidden fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
 
     <div class="bg-white w-96 max-h-[80vh] overflow-y-auto p-6 rounded-2xl relative text-left">
 
-      <!-- CLOSE BUTTON -->
       <button onclick="closeModal()"
         class="absolute top-2 right-3 text-xl font-bold">
         ✖
       </button>
 
-      <!-- TITLE -->
       <h2 id="modalTitle"
           class="text-2xl font-bold mb-4 text-pink-500">
       </h2>
 
-      <!-- RECIPE -->
       <p id="modalText"
          class="text-gray-700 whitespace-pre-wrap">
       </p>
-
     </div>
-
   </div>
 
-  <!-- JAVASCRIPT -->
   <script>
 
     const recipes = {
@@ -262,8 +251,6 @@ Cocoa powder
     function closeModal() {
       document.getElementById("modal").classList.add("hidden");
     }
-
-    // CLOSE MODAL WHEN CLICKING OUTSIDE
     window.onclick = function(event) {
 
       const modal = document.getElementById("modal");
