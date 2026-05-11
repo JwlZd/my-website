@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Drink Recipes</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      cursor: url("Spatula.png") 16 16, auto;
+    }
+
+    button,
+    a,
+    img {
+      cursor: url("SpongeBob.png") 16 16, pointer;
+      font-family: 'Pacifico', cursive;
+    }
+
+    h3 {
+      font-family: 'Pacifico', cursive;
+    }
+
+  </style>
+
+</head>
+
+<body class="text-center bg-blue-200 min-h-screen">
+  <h3 class="text-blue-800 text-5xl font-bold mt-10">
+    Drink Recipes!
+  </h3>
+  <div class="flex justify-center gap-6 mt-10 flex-wrap">
+
+    <a href="index.html">
+      <button class="bg-yellow-100 hover:bg-yellow-500 text-yellow-700 text-2xl px-6 py-3 rounded-2xl shadow-lg transition duration-300">
+        Home Page!
+      </button>
+    </a>
+
+    <a href="Sweet.html">
+      <button class="bg-pink-200 hover:bg-pink-500 text-pink-700 text-2xl px-6 py-3 rounded-2xl shadow-lg transition duration-300">
+        Sweet Recipes!
+      </button>
+    </a>
+
+    <a href="Savory.html">
+      <button class="bg-orange-200 hover:bg-orange-500 text-orange-700 text-2xl px-6 py-3 rounded-2xl shadow-lg transition duration-300">
+        Savory Recipes!
+      </button>
+    </a>
+
+  </div>
+  <div class="flex justify-center gap-8 flex-wrap mt-10 pb-10">
+
+    <div>
+      <img src="https://myincrediblerecipes.com/wp-content/uploads/2023/02/set-2-Lemonade-15-scaled.jpg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('drink1')">
+    </div>
+
+    <div>
+      <img src="https://www.thedinnerbite.com/wp-content/uploads/2025/03/iced-latte-recipe-img-500x500.jpg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('drink2')">
+    </div>
+
+    <div>
+      <img src="https://static01.nyt.com/images/2025/02/25/multimedia/Strawberry-Smoothie-cqzb/Strawberry-Smoothie-cqzb-mediumSquareAt3X.jpg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('drink3')">
+    </div>
+
+    <div>
+      <img src="https://wholefoodsoulfoodkitchen.com/wp-content/uploads/2023/07/vanilla-milkshake-without-ice-cream-recipe.jpg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('drink4')">
+    </div>
+
+    <div>
+      <img src="https://www.natalieshealth.com/wp-content/uploads/2022/05/Iced-Coconut-Matcha-Latte-featured-image-500x500.jpeg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('drink5')">
+    </div>
+
+    <div>
+      <img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_960,w_960//InstamartAssets/fruit_punch.webp"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('drink6')">
+    </div>
+  </div>
+
+  <div id="modal"
+       class="hidden fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
+
+    <div class="bg-white w-96 max-h-[80vh] overflow-y-auto p-6 rounded-2xl relative text-left">
+
+      <button onclick="closeModal()"
+        class="absolute top-2 right-3 text-xl font-bold">
+        ✖
+      </button>
+
+      <h2 id="modalTitle"
+          class="text-2xl font-bold mb-4 text-blue-500">
+      </h2>
+
+      <p id="modalText"
+         class="text-gray-700 whitespace-pre-wrap">
+      </p>
+
+    </div>
+  </div>
+
+  <script>
+
+    const recipes = {
+
+      drink1: {
+        title: "Lemonade",
+        text: `1 cup lemon juice
+4 cups cold water
+1/2 cup sugar
+Ice cubes
+
+1. Mix lemon juice and sugar.
+2. Add cold water.
+3. Stir well.
+4. Serve with ice.`
+      },
+
+      drink2: {
+        title: "Iced Coffee",
+        text: `1 cup brewed coffee
+1/2 cup milk
+Ice cubes
+Sugar to taste
+
+1. Brew coffee.
+2. Let cool.
+3. Pour over ice.
+4. Add milk + sugar.`
+      },
+
+      drink3: {
+        title: "Strawberry Smoothie",
+        text: `1 cup strawberries
+1 banana
+1 cup milk
+Honey
+
+1. Add ingredients to blender.
+2. Blend until smooth.
+3. Serve cold.`
+      },
+
+      drink4: {
+        title: "Vanilla Milkshake",
+        text: `2 cups vanilla ice cream
+1 cup milk
+Vanilla extract
+
+1. Blend ingredients.
+2. Pour into glass.
+3. Add whipped cream if wanted.`
+      },
+
+      drink5: {
+        title: "Iced Matcha Latte",
+        text: `1 tsp matcha powder
+2 tbsp hot water
+1 cup milk
+Ice cubes
+
+1. Whisk matcha + water.
+2. Fill glass with ice.
+3. Add milk.
+4. Pour matcha on top.`
+      },
+
+      drink6: {
+        title: "Fruit Punch",
+        text: `2 cups orange juice
+2 cups pineapple juice
+1 cup sprite
+Mixed fruit
+
+1. Mix juices together.
+2. Add sprite.
+3. Add chopped fruit.
+4. Serve chilled.`
+      }
+
+    };
+
+    function openModal(recipeKey) {
+
+      document.getElementById("modalTitle").innerText =
+        recipes[recipeKey].title;
+
+      document.getElementById("modalText").innerText =
+        recipes[recipeKey].text;
+
+      document.getElementById("modal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("modal").classList.add("hidden");
+    }
+
+    window.onclick = function(event) {
+
+      const modal = document.getElementById("modal");
+
+      if (event.target === modal) {
+        closeModal();
+      }
+
+    }
+
+  </script>
+</body>
+</html>

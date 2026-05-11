@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Savory Recipes</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      cursor: url("Spatula.png") 16 16, auto;
+    }
+
+    button,
+    a,
+    img {
+      cursor: url("SpongeBob.png") 16 16, pointer;
+      font-family: 'Pacifico', cursive;
+    }
+
+    h3 {
+      font-family: 'Pacifico', cursive;
+    }
+
+  </style>
+
+</head>
+<body class="text-center bg-orange-200 min-h-screen " >
+  
+  <h3 class="text-red-700 text-5xl font-bold mt-10">
+    Savory Recipes!
+  </h3>
+  <div class="flex justify-center gap-6 mt-10 flex-wrap">
+
+    <a href="index.html">
+      <button class="bg-yellow-100 hover:bg-yellow-500 text-yellow-700 text-2xl px-6 py-3 rounded-2xl shadow-lg transition duration-300">
+        Home Page!
+      </button>
+    </a>
+
+    <a href="Sweet.html">
+      <button class="bg-pink-200 hover:bg-pink-500 text-pink-700 text-2xl px-6 py-3 rounded-2xl shadow-lg transition duration-300">
+        Sweet Recipes!
+      </button>
+    </a>
+
+    <a href="Drinks.html">
+      <button class="bg-blue-200 hover:bg-blue-500 text-blue-700 text-2xl px-6 py-3 rounded-2xl shadow-lg transition duration-300">
+        Drinks!
+      </button>
+    </a>
+
+  </div>
+  <div class="flex justify-center gap-8 flex-wrap mt-10 pb-10">
+
+    <div>
+      <img src="https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/easy_spaghetti_bolognese_93639_16x9.jpg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('savory1')">
+    </div>
+
+    <div>
+      <img src="https://cravinghomecooked.com/wp-content/uploads/2019/08/crispy-fried-chicken-1.jpg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('savory2')">
+    </div>
+
+    <div>
+      <img src="https://www.recipetineats.com/tachyon/2017/03/One-Pot-Chicken-Alfredo-2.jpg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('savory3')">
+    </div>
+
+    <div>
+      <img src="https://foxeslovelemons.com/wp-content/uploads/2023/06/Chicken-Shawarma-8.jpg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('savory4')">
+    </div>
+
+    <div>
+      <img src="https://sugargeekshow.com/wp-content/uploads/2025/11/creamy_baked_mac_and_cheese-500x500.jpg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('savory5')">
+    </div>
+
+    <div>
+      <img src="https://sudachirecipes.com/wp-content/uploads/2025/07/shoyu-ramen-new-thumb.png"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('savory6')">
+    </div>
+
+  </div>
+  <div id="modal"
+       class="hidden fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
+
+    <div class="bg-white w-96 max-h-[80vh] overflow-y-auto p-6 rounded-2xl relative text-left">
+
+      <button onclick="closeModal()"
+        class="absolute top-2 right-3 text-xl font-bold">
+        ✖
+      </button>
+
+      <h2 id="modalTitle"
+          class="text-2xl font-bold mb-4 text-orange-500">
+      </h2>
+
+      <p id="modalText"
+         class="text-gray-700 whitespace-pre-wrap">
+      </p>
+
+    </div>
+
+  </div>
+  <script>
+
+    const recipes = {
+
+      savory1: {
+        title: "Spaghetti Bolognese",
+        text: `400g spaghetti
+500g ground beef
+1 onion
+2 garlic cloves
+800g tomato sauce
+
+1. Cook spaghetti.
+2. Brown beef.
+3. Add onion + garlic.
+4. Pour tomato sauce.
+5. Simmer 20 min.
+6. Serve together.`
+      },
+
+      savory2: {
+        title: "Crispy Fried Chicken",
+        text: `1kg chicken
+2 cups flour
+1 tsp paprika
+1 tsp garlic powder
+2 eggs
+
+1. Season chicken.
+2. Dip in eggs.
+3. Coat with flour mix.
+4. Fry until golden brown.`
+      },
+
+      savory3: {
+        title: "Chicken Alfredo",
+        text: `2 chicken breasts
+250g pasta
+1 cup cream
+1/2 cup parmesan
+2 garlic cloves
+
+1. Cook pasta.
+2. Cook chicken.
+3. Make cream sauce.
+4. Add parmesan.
+5. Mix together.`
+      },
+
+      savory4: {
+        title: "Chicken Shawarma",
+        text: `500g chicken
+1 cup yogurt
+1 tsp paprika
+1 tsp cumin
+Pita bread
+
+1. Marinate chicken.
+2. Cook until golden.
+3. Slice thinly.
+4. Serve in pita bread.`
+      },
+
+      savory5: {
+        title: "Mac and Cheese",
+        text: `250g macaroni
+2 cups milk
+2 cups cheddar cheese
+2 tbsp butter
+2 tbsp flour
+
+1. Cook macaroni.
+2. Make cheese sauce.
+3. Mix together.
+4. Bake 15 minutes.`
+      },
+
+      savory6: {
+        title: "Japanese Ramen",
+        text: `Ramen noodles
+4 cups broth
+Soy sauce
+Soft boiled egg
+Chicken slices
+
+1. Heat broth.
+2. Cook noodles.
+3. Add toppings.
+4. Serve hot.`
+      }
+
+    };
+
+    function openModal(recipeKey) {
+
+      document.getElementById("modalTitle").innerText =
+        recipes[recipeKey].title;
+
+      document.getElementById("modalText").innerText =
+        recipes[recipeKey].text;
+
+      document.getElementById("modal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("modal").classList.add("hidden");
+    }
+
+    window.onclick = function(event) {
+
+      const modal = document.getElementById("modal");
+
+      if (event.target === modal) {
+        closeModal();
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
