@@ -32,9 +32,13 @@
 </head>
 
 <body class="text-center bg-pink-200 min-h-screen">
+
+  <!-- TITLE -->
   <h3 class="text-orange-800 text-5xl font-bold mt-10">
     Sweet Recipes!
   </h3>
+
+  <!-- NAVIGATION -->
   <div class="flex justify-center gap-6 mt-10 flex-wrap">
 
     <a href="index.html">
@@ -101,6 +105,34 @@
 
     </div>
 
+    <div>
+      <img src="https://www.mybakingaddiction.com/wp-content/uploads/2024/05/sliced-peanut-butter-banana-bread-hero.jpg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('cookie7')">
+
+    </div>
+
+    <div>
+      <img src="https://www.simplytrinicooking.com/wp-content/uploads/red-velvet-cake.jpg.webp"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('cookie8')">
+
+    </div>
+
+    <div>
+      <img src="https://www.glorioustreats.com/wp-content/uploads/2024/07/easy-blueberry-muffins-square.jpeg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('cookie9')">
+
+    </div>
+
+    <div>
+      <img src="https://www.recipetineats.com/tachyon/2025/11/Crepese-1.jpg"
+        class="w-60 h-60 object-cover rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+        onclick="openModal('cookie10')">
+
+    </div>
+
   </div>
 
   <div id="modal"
@@ -110,7 +142,7 @@
 
       <button onclick="closeModal()"
         class="absolute top-2 right-3 text-xl font-bold">
-        ✖
+    
       </button>
 
       <h2 id="modalTitle"
@@ -120,7 +152,9 @@
       <p id="modalText"
          class="text-gray-700 whitespace-pre-wrap">
       </p>
+
     </div>
+
   </div>
 
   <script>
@@ -194,7 +228,7 @@ Filling:
 1. Mix dry ingredients.
 2. Add wet ingredients.
 3. Fill cupcake liners.
-4. Bake at 175°C for 18–22 min.`
+4. Bake at 175°C for 18 - 22 min.`
       },
 
       cookie5: {
@@ -216,7 +250,7 @@ Butter
 3. Roll dough flat.
 4. Add cinnamon filling.
 5. Roll and slice.
-6. Bake at 180°C for 20–25 min.`
+6. Bake at 180°C for 20 - 25 min.`
 },
 
      cookie6: {
@@ -234,9 +268,82 @@ Cocoa powder
 4. Layer cream + biscuits.
 5. Chill overnight.
 6. Dust cocoa powder on top.`
-}
+},
 
-    };
+  cookie7: {
+    title: "Banana Bread",
+    text: `3 ripe bananas  
+1/2 cup melted butter  
+3/4 cup brown sugar  
+1 egg  
+1 tsp vanilla  
+1 1/2 cups flour  
+1 tsp baking soda  
+Pinch of salt  
+
+1. Mash bananas.  
+2. Mix butter + sugar.  
+3. Add egg + vanilla.  
+4. Stir in dry ingredients.  
+5. Pour into loaf pan.  
+6. Bake at 175°C for 50 - 60 min.`
+  },
+
+  cookie8: {
+    title: "Red Velvet Cake",
+    text: `2 1/2 cups flour  
+1 1/2 cups sugar  
+1 tsp baking soda  
+1 tbsp cocoa powder  
+2 eggs  
+1 cup buttermilk  
+1/2 cup oil  
+Red food coloring  
+1 tsp vanilla  
+
+1. Mix dry ingredients.  
+2. Add wet ingredients.  
+3. Mix until smooth.  
+4. Pour into cake pan.  
+5. Bake at 175°C for 30 - 35 min.  
+6. Frost with cream cheese frosting.`
+  },
+
+  cookie9: {
+    title: "Blueberry Muffins",
+    text: `2 cups flour  
+1/2 cup sugar  
+2 tsp baking powder  
+1/2 tsp salt  
+1/2 cup butter  
+1 egg  
+1 cup milk  
+1 cup blueberries  
+
+1. Mix dry ingredients.  
+2. Add wet ingredients.  
+3. Fold in blueberries.  
+4. Spoon into muffin tray.  
+5. Bake at 180°C for 20 - 25 min.`
+  },
+
+  cookie10: {
+    title: "Crepes",
+    text: `1 cup flour  
+2 eggs  
+1 1/2 cups milk  
+2 tbsp melted butter  
+1 tbsp sugar  
+Pinch of salt  
+
+1. Whisk everything until smooth.  
+2. Heat non-stick pan.  
+3. Pour thin layer of batter.  
+4. Cook 1 - 2 min per side.  
+5. Fill with Nutella, fruit, or cream.`
+  }
+
+};
     function openModal(recipeKey) {
 
       document.getElementById("modalTitle").innerText =
@@ -251,6 +358,8 @@ Cocoa powder
     function closeModal() {
       document.getElementById("modal").classList.add("hidden");
     }
+
+    // CLOSE MODAL WHEN CLICKING OUTSIDE
     window.onclick = function(event) {
 
       const modal = document.getElementById("modal");
